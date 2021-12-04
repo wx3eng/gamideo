@@ -2,7 +2,6 @@ package com.wx3eng.gamideo.external;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import com.wx3eng.gamideo.Entity.Item;
 import com.wx3eng.gamideo.Entity.ItemType;
 import com.wx3eng.gamideo.servlet.Game;

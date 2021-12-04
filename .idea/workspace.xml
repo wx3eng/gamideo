@@ -10,11 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28b0d003-72f0-42fb-b66f-11a68e1fedf8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/Entity/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/Entity/ItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/SearchServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/Entity/FavoriteRequestBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/db/MySQLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/db/MySQLDBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/db/MySQLException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/db/MySQLTableCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/helper/DoGetResponseHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/FavoriteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/gamideo_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/gamideo_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamideo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gamideo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/SearchServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,6 +54,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -59,6 +69,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.wx3eng.gamideo.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySQLTableCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wx3eng.gamideo.db.MySQLTableCreator" />
+      <module name="gamideo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wx3eng.gamideo.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,10 +192,12 @@
     <list>
       <item itemvalue="Application.Name" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MySQLTableCreator" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.48" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MySQLTableCreator" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Name" />
       </list>
@@ -195,7 +220,11 @@
       <workItem from="1637211047682" duration="706000" />
       <workItem from="1637211861665" duration="7000" />
       <workItem from="1637211883305" duration="7767000" />
-      <workItem from="1637422395255" duration="9167000" />
+      <workItem from="1637422395255" duration="10088000" />
+      <workItem from="1638506945912" duration="2137000" />
+      <workItem from="1638511146371" duration="543000" />
+      <workItem from="1638511940427" duration="3651000" />
+      <workItem from="1638598386336" duration="4495000" />
     </task>
     <servers />
   </component>
@@ -213,5 +242,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

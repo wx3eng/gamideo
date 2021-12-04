@@ -3,6 +3,7 @@ package com.wx3eng.gamideo.servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wx3eng.gamideo.external.TwitchClient;
 import com.wx3eng.gamideo.external.TwitchException;
+import com.wx3eng.gamideo.helper.DoGetResponseHelper;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,14 +15,15 @@ public class SearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String gameId = request.getParameter("game_id");
-        response.setContentType("application/json;charset=UTF-8");
+//        response.setContentType("application/json;charset=UTF-8");
         TwitchClient client = new TwitchClient();
         try {
             if (gameId == null) {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 return;
             }
-            response.getWriter().print(new ObjectMapper().writeValueAsString(client.searchItems(gameId)));
+            DoGetResponseHelper.doGetResponseHelper(response, client.searchItems(gameId));
+//            response.getWriter().print(new ObjectMapper().writeValueAsString(client.searchItems(gameId)));
         } catch (TwitchException e) {
             throw new ServletException(e);
         }
