@@ -168,7 +168,7 @@ public class TwitchClient {
         return videos;
     }
 
-    private List<Item> searchByType(String gameId, ItemType type, int limit) throws TwitchException {
+    public List<Item> searchByType(String gameId, ItemType type, int limit) throws TwitchException {
         List<Item> items = Collections.emptyList();
         switch (type) {
             case STREAM:

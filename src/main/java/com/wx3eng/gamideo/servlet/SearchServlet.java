@@ -3,7 +3,6 @@ package com.wx3eng.gamideo.servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wx3eng.gamideo.external.TwitchClient;
 import com.wx3eng.gamideo.external.TwitchException;
-import com.wx3eng.gamideo.helper.DoGetResponseHelper;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -22,7 +21,7 @@ public class SearchServlet extends HttpServlet {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 return;
             }
-            DoGetResponseHelper.doGetResponseHelper(response, client.searchItems(gameId));
+            ServletUtil.writeItemMap(response, client.searchItems(gameId));
 //            response.getWriter().print(new ObjectMapper().writeValueAsString(client.searchItems(gameId)));
         } catch (TwitchException e) {
             throw new ServletException(e);

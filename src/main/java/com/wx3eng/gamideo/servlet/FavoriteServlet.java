@@ -5,7 +5,6 @@ import com.wx3eng.gamideo.Entity.FavoriteRequestBody;
 import com.wx3eng.gamideo.Entity.Item;
 import com.wx3eng.gamideo.db.MySQLConnection;
 import com.wx3eng.gamideo.db.MySQLException;
-import com.wx3eng.gamideo.helper.DoGetResponseHelper;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -18,14 +17,21 @@ import java.util.Map;
 public class FavoriteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userId = request.getParameter("user_id");
+//        String userId = request.getParameter("user_id");
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            return;
+        }
+        String userId = (String) session.getAttribute("user_id");
+
         Map<String, List<Item>> itemMap;
         MySQLConnection connection = null;
         try {
             // Read the favorite items from the database
             connection = new MySQLConnection();
             itemMap = connection.getFavoriteItems(userId);
-            DoGetResponseHelper.doGetResponseHelper(response, itemMap);
+            ServletUtil.writeItemMap(response, itemMap);
 //            response.setContentType("application/json;charset=UTF-8");
 //            response.getWriter().print(new ObjectMapper().writeValueAsString(itemMap));
         } catch (MySQLException e) {
@@ -40,8 +46,12 @@ public class FavoriteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get user ID from request URL, this is a temporary solution since we don’t support session now
-        String userId = request.getParameter("user_id");
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            return;
+        }
+        String userId = (String) session.getAttribute("user_id");
         // Get favorite item information from request body
         ObjectMapper mapper = new ObjectMapper();
         FavoriteRequestBody body = mapper.readValue(request.getReader(), FavoriteRequestBody.class);
@@ -65,7 +75,12 @@ public class FavoriteServlet extends HttpServlet {
     }
 
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userId = request.getParameter("user_id");
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            return;
+        }
+        String userId = (String) session.getAttribute("user_id");
         ObjectMapper mapper = new ObjectMapper();
         FavoriteRequestBody body = mapper.readValue(request.getReader(), FavoriteRequestBody.class);
         if (body == null) {

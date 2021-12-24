@@ -10,7 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28b0d003-72f0-42fb-b66f-11a68e1fedf8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/Entity/LoginRequestBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/Entity/LoginResponseBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/Entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/recommendation/ItemRecommender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/recommendation/RecommendationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/RecommendationServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/RegisterServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/ServletUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/gamideo_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/gamideo_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamideo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gamideo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/db/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/db/MySQLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/helper/DoGetResponseHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/FavoriteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/FavoriteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/servlet/SearchServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +232,7 @@
       <workItem from="1638598386336" duration="4495000" />
       <workItem from="1639035094702" duration="238000" />
       <workItem from="1639632810788" duration="766000" />
-      <workItem from="1640218321635" duration="983000" />
+      <workItem from="1640218321635" duration="8898000" />
     </task>
     <servers />
   </component>
