@@ -24,14 +24,14 @@ import java.util.*;
 public class TwitchClient {
     private static final String TOP_GAME_URL = "https://api.twitch.tv/helix/games/top?first=%s";
     private static final String GAME_SEARCH_URL_TEMPLATE = "https://api.twitch.tv/helix/games?name=%s";
-    private static final int DEFAULT_GAME_LIMIT = 20;
+    private static final int DEFAULT_GAME_LIMIT = 10;
     private static String TOKEN;
     private static String CLIENT_ID;
     private static final String STREAM_SEARCH_URL_TEMPLATE = "https://api.twitch.tv/helix/streams?game_id=%s&first=%s";
     private static final String VIDEO_SEARCH_URL_TEMPLATE = "https://api.twitch.tv/helix/videos?game_id=%s&first=%s";
     private static final String CLIP_SEARCH_URL_TEMPLATE = "https://api.twitch.tv/helix/clips?game_id=%s&first=%s";
     private static final String TWITCH_BASE_URL = "https://www.twitch.tv/";
-    private static final int DEFAULT_SEARCH_LIMIT = 20;
+    private static final int DEFAULT_SEARCH_LIMIT = 10;
 
 
     private static void getConfig() throws IOException {

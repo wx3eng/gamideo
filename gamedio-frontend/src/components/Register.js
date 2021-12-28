@@ -32,10 +32,10 @@ class Register extends React.Component {
       })
   }
  
-  render = () => {
+  render() {
     return (
       <>
-        <Button shape="default" type="primary" onClick={this.signupOnClick}>
+        <Button shape="default" ghost="true" onClick={this.signupOnClick}>
           Register</Button>
         <Modal
           title="Register"
@@ -49,6 +49,7 @@ class Register extends React.Component {
             initialValues={{ remember: true }}
             onFinish={this.onFinish}
             preserve={false}
+            autoComplete="off"
           >
             <Form.Item
               name="user_id"

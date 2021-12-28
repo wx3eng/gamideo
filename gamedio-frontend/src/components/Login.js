@@ -36,7 +36,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <Button shape="default" onClick={this.signinOnClick} style={{ marginRight: '20px' }}>
+        <Button shape="default" ghost="true" onClick={this.signinOnClick} style={{ marginRight: '10px' }}>
         Login</Button>
         <Modal
           title="Login"
@@ -49,6 +49,7 @@ class Login extends React.Component {
             name="normal_login"
             onFinish={this.onFinish}
             preserve={false}
+            autoComplete="off"
           >
             <Form.Item
               name="user_id"

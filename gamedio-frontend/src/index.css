@@ -8,4 +8,8 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
-  
+
+.site-header {
+  background: rgb(162, 0, 255);
+  height: 65px;
+}
