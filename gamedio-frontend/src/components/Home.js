@@ -1,26 +1,24 @@
 import React from 'react';
-import { Button, Card, List, message, Tabs, Tooltip } from 'antd';
+import { Button, List, message, Tabs, Tooltip } from 'antd';
 import { StarOutlined, StarFilled } from '@ant-design/icons';
 import { addFavoriteItem, deleteFavoriteItem } from '../utils';
- 
+
 const { TabPane } = Tabs;
 const tabKeys = {
   Streams: 'stream',
   Videos: 'videos',
   Clips: 'clips',
 }
- 
+
 const processUrl = (url) => url
-  .replace('%{height}', '252')
-  .replace('%{width}', '480')
-  .replace('{height}', '252')
-  .replace('{width}', '480');
- 
-const renderCardTitle = (item, loggedIn, favs, favOnChange) => {
-  const title = `${item.broadcaster_name} - ${item.title}`;
- 
+  .replace('%{height}', '300')
+  .replace('%{width}', '450')
+  .replace('{height}', '300')
+  .replace('{width}', '450');
+
+const renderFavIcon = (item, loggedIn, favs, favOnChange) => {
   const isFav = favs.find((fav) => fav.id === item.id);
- 
+
   const favOnClick = () => {
     if (isFav) {
       deleteFavoriteItem(item).then(() => {
@@ -28,82 +26,107 @@ const renderCardTitle = (item, loggedIn, favs, favOnChange) => {
       }).catch(err => {
         message.error(err.message)
       })
- 
+
       return;
     }
- 
+
     addFavoriteItem(item).then(() => {
       favOnChange();
     }).catch(err => {
       message.error(err.message)
     })
   }
- 
+
   return (
     <>
       {
         loggedIn &&
-        <Tooltip title={isFav ? "Remove from favorite list" : "Add to favorite list"}>
+        <Tooltip title={isFav ? "Remove from My Favorites" : "Add to My Favorites"} color="rgb(162, 0, 255)">
           <Button shape="circle" icon={isFav ? <StarFilled /> : <StarOutlined />} onClick={favOnClick} />
         </Tooltip>
       }
-      <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', width: 450 }}>
-        <Tooltip title={title}>
-          <span>{title}</span>
-        </Tooltip>
-      </div>
     </>
   )
 }
- 
-const renderCardGrid = (data, loggedIn, favs, favOnChange) => {
+
+const renderList = (data, loggedIn, favs, favOnChange) => {
+  console.log(data)
+  if (data.length === 0) {
+    return (
+      <>
+        <b>Instructions to use this website:</b>
+        <div>Click on the left navigation panel to select game to watch</div>
+        <div>Select Streams/Videos/Clips to view from the ribbon</div>
+        <div>Once registered and logged in, you will be able to like/unlike resources. We will recommend resources based on your game preference</div>
+      </>
+    )
+  }
   return (
     <List
-      grid={{
-        xs: 1,
-        sm: 2,
-        md: 4,
-        lg: 4,
-        xl: 6,
-      }}
+      itemLayout="vertical"
+      size="large"
       dataSource={data}
+      pagination={{
+        onChange: page => {
+          console.log(page);
+        },
+        pageSize: 5,
+      }}
       renderItem={item => (
-        <List.Item style={{ marginRight: '20px' }}>
-          <Card
-            title={renderCardTitle(item, loggedIn, favs, favOnChange)}
-          >
+        <List.Item
+          style={{ marginRight: '20px' }}
+          actions={[renderFavIcon(item, loggedIn, favs, favOnChange)]}
+          extra={
             <a href={item.url} target="_blank" rel="noopener noreferrer">
-              <img 
+              <img
+                width={450}
+                height={300}
                 alt="Placeholder"
                 src={processUrl(item.thumbnail_url)}
               />
             </a>
-          </Card>
+          }
+        >
+          <List.Item.Meta
+            title={<span style={{ overflow: 'hidden', textOverflow: 'ellipsis', width: 250, paddingLeft: '1em' }}>
+              <Tooltip title={"Broadcast by: " + item.broadcaster_name} placement="topLeft" color="rgb(162, 0, 255)">
+                <span>{item.title}</span>
+              </Tooltip>
+            </span>}
+            description={
+              <>
+                <div>Click the link below to watch</div>
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  {item.url}
+                </a>
+              </>
+            }
+          />
         </List.Item>
       )}
     />
   )
 }
- 
+
 const Home = ({ resources, loggedIn, favoriteItems, favoriteOnChange }) => {
   const { VIDEO, STREAM, CLIP } = resources;
-  const { VIDEO: favVideos, STREAM: favStreams, CLIP: favClips} = favoriteItems;
- 
+  const { VIDEO: favVideos, STREAM: favStreams, CLIP: favClips } = favoriteItems;
+
   return (
-    <Tabs 
-      defaultActiveKey={tabKeys.Streams} 
+    <Tabs
+      defaultActiveKey={tabKeys.Streams}
     >
-      <TabPane tab="Streams" key={tabKeys.Streams} style={{ height: '680px', overflow: 'auto' }} forceRender={true}>
-        {renderCardGrid(STREAM, loggedIn, favStreams, favoriteOnChange)}
+      <TabPane tab="Streams" key={tabKeys.Streams} style={{ height: '640px', overflow: 'auto' }} forceRender={true}>
+        {renderList(STREAM, loggedIn, favStreams, favoriteOnChange)}
       </TabPane>
-      <TabPane tab="Videos" key={tabKeys.Videos} style={{ height: '680px', overflow: 'auto' }} forceRender={true}>
-        {renderCardGrid(VIDEO, loggedIn, favVideos, favoriteOnChange)}
+      <TabPane tab="Videos" key={tabKeys.Videos} style={{ height: '640px', overflow: 'auto' }} forceRender={true}>
+        {renderList(VIDEO, loggedIn, favVideos, favoriteOnChange)}
       </TabPane>
-      <TabPane tab="Clips" key={tabKeys.Clips} style={{ height: '680px', overflow: 'auto' }} forceRender={true}>
-        {renderCardGrid(CLIP, loggedIn, favClips, favoriteOnChange)}
+      <TabPane tab="Clips" key={tabKeys.Clips} style={{ height: '640px', overflow: 'auto' }} forceRender={true}>
+        {renderList(CLIP, loggedIn, favClips, favoriteOnChange)}
       </TabPane>
     </Tabs>
   );
 }
- 
+
 export default Home;

@@ -11,11 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="28b0d003-72f0-42fb-b66f-11a68e1fedf8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/components/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/components/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/components/Favorites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/components/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -222,7 +222,9 @@
       <workItem from="1639632810788" duration="766000" />
       <workItem from="1640218321635" duration="9397000" />
       <workItem from="1640387723389" duration="1392000" />
-      <workItem from="1640674057421" duration="3036000" />
+      <workItem from="1640674057421" duration="3605000" />
+      <workItem from="1640762213052" duration="1174000" />
+      <workItem from="1642042397191" duration="2096000" />
     </task>
     <servers />
   </component>

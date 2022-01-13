@@ -35,7 +35,7 @@ class Favorites extends React.Component {
         <Drawer
           title="My Favorites"
           placement="right"
-          width={720}
+          width={480}
           visible={this.state.displayDrawer}
           onClose={this.onDrawerClose}
         >

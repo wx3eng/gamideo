@@ -106,18 +106,19 @@ class App extends React.Component {
         <Header className="site-header">
           <Row justify="space-between">
             <Col>
-              <span style={{ color: "white", fontWeight: "bold", fontSize: "22px", marginLeft: "10px" }}>Gamedio </span>
+              <span style={{ color: "white", fontWeight: "bold", fontSize: "22px", marginLeft: "10px" }} >Gamedio </span>
               <span style={{ color: "white", fontSize: "10px", marginRight: "10px" }}> Powered By Twitch API</span>
-              {
-                this.state.loggedIn &&
-                <Favorites data={this.state.favoriteItems} />
-              }
             </Col>
             <Col>
               {
                 this.state.loggedIn ?
-                  <Button shape="default" onClick={this.signoutOnClick} ghost="true">
-                    Logout</Button> :
+                  (
+                  <>
+                  <Favorites data={this.state.favoriteItems} />
+                  <Button style={{marginLeft: "24px"}} shape="default" onClick={this.signoutOnClick} ghost="true">
+                    Logout</Button>
+                  </>
+                    ) :
                   (
                     <>
                       <Login onSuccess={this.signinOnSuccess} />
@@ -136,6 +137,7 @@ class App extends React.Component {
               mode="inline"
               onSelect={this.onGameSelect}
               style={{ marginTop: '10px' }}
+              defaultOpenKeys={['Popular Games']}
             >
               <Menu.Item icon={<LikeOutlined />} key="Recommendation">
                 Recommend for you</Menu.Item>
