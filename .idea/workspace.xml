@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="gamideo:war exploded" />
+      <artifact name="gamideo:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28b0d003-72f0-42fb-b66f-11a68e1fedf8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/components/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/components/Favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamedio-frontend/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/gamedio-frontend/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wx3eng/gamideo/external/TwitchClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +50,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+    </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.48">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -96,7 +97,6 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.48" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.48" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <deployment>
         <artifact name="gamideo:war exploded">
           <settings>
@@ -224,7 +224,7 @@
       <workItem from="1640387723389" duration="1392000" />
       <workItem from="1640674057421" duration="3605000" />
       <workItem from="1640762213052" duration="1174000" />
-      <workItem from="1642042397191" duration="2096000" />
+      <workItem from="1642042397191" duration="4690000" />
     </task>
     <servers />
   </component>
